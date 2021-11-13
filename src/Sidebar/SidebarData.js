@@ -1,22 +1,22 @@
 import React from 'react'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import BugReportRoundedIcon from '@mui/icons-material/BugReportRounded';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import ListRoundedIcon from '@mui/icons-material/ListRounded';
 
-export const SidebarData = [
+export const sidebarData = [
   {
     title: "Home",
     icon: <HomeRoundedIcon />,
-    Link: "/home"
+    link: "/home"
   },
  {
     title: "All Issues",
     icon: <ListRoundedIcon />,
-    Link: "/issues"
+    link: "/issues"
   },
  {
     title: "My Issues",
-    icon: <BugReportRoundedIcon />,
-    Link: "/assigned"
+    icon: <BugReportIcon />,
+    link: "/assigned"
   }
 ]

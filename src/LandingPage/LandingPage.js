@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
-import RepoSearch from '../RepoSearch';
+import RepoSearch from '../RepoSearch/RepoSearch';
+import RepoContainer from '../RepoContainer/RepoContainer'
 // import RepoSearchByOwner from '../RepoSearchByOwner';
 
-function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="landing-page">
-    <RepoSearch />
-    {/* <RepoSearchByOwner /> */}
-    <RepoContainer />
+      <h2>Landing Page</h2>
+     <RepoSearch />
+      {/* <RepoContainer /> */}
     </div>
   )
 }

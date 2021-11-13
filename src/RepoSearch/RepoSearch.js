@@ -1,24 +1,23 @@
 import React, { useContext, useState } from "react"
 import { SearchContext } from '../context/SearchContext';
 import searchPublicRepos from "../apiCalls";
-import { Api } from "@mui/icons-material";
 
-function RepoSearch() {
+const RepoSearch = () => {
 const [searchKeyword, setSearchKeyword] = useState("");
-const {setRepos} = useContext(SearchContext)
+const { repos, setRepos } = useContext(SearchContext);
 
-const handleSubmit = event => {
+const handleSubmit = (event) => {
   event.preventDefault();
-
   const processedInput = searchKeyword.split(" ");
-
   if (processedInput.length === 1) {
-    searchPublicRepoes(searchKeyword)
-    .then(res => setRepos(res))
+    searchPublicRepos(searchKeyword)
+    .then(res => {
+      setRepos(res.items)
+    })
   } else {
     const multipleWordQuery = processedInput.join("+")
     searchPublicRepos(multipleWordQuery)
-    .then(res => setRepos(res))
+    .then(res => setRepos(res.items))
   }
 }
 

@@ -1,18 +1,18 @@
-import React, { createContext, useReducer, useEffect } from 'react'
-import SearchContextReducer from "../reducers/SearchContextReducer"
+import React, { createContext, useState } from 'react'
 
 export const SearchContext = createContext();
 
-const SearchContext = (props) => {
+const SearchContextProvider = (props) => {
   const [repos, setRepos] = useState([]);
 
-  
-
   return (
-    <SearchContext.Provider value={{repos, setRepoes}}>
+    <SearchContext.Provider value={{
+      repos, 
+      setRepos
+      }}>
       {props.children}
     </SearchContext.Provider>
   )
 }
 
-export default RepoContext
+export default SearchContextProvider

@@ -3,4 +3,9 @@
   height: 100vh;
 }
 
+.navbar-main-body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
 

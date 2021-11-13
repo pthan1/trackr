@@ -13,10 +13,12 @@ const handleSubmit = event => {
   const processedInput = searchKeyword.split(" ");
 
   if (processedInput.length === 1) {
-    searchPublicRepoes(searchKeyword).
+    searchPublicRepoes(searchKeyword)
+    .then(res => setRepos(res))
   } else {
     const multipleWordQuery = processedInput.join("+")
-    searchPublicRepos(multipleWordQuery);
+    searchPublicRepos(multipleWordQuery)
+    .then(res => setRepos(res))
   }
 }
 

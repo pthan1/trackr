@@ -3,9 +3,9 @@ import React from 'react';
 function Header() {
   return (
     <div className="header">
-      <h1>Trackr</h1>
+      <div>Trackr</div>
     </div>
   )
 }
 
-export default Header
+export default Header;

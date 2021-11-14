@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { SearchContext } from '../context/SearchContext';
 import RepoCard from '../RepoCard/RepoCard'
+import './RepoContainer.css'
 
 
 const RepoContainer = () => {

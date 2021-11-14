@@ -23,10 +23,9 @@ const handleSubmit = (event) => {
 
   return (
     <div className="public-repo-search-form">
-      <form>
-        <label for="keyword">Search By Keyword</label>
-        <input type="text" name="search-keyword" value={searchKeyword} onChange={event => setSearchKeyword(event.target.value)} />
-        <button type="button" onClick={event => handleSubmit(event)}>Search</button>
+      <form onSubmit={event => handleSubmit(event)}>
+        {/* <label for="keyword">Search By Keyword</label> */}
+        <input type="text" name="search-keyword" value={searchKeyword} onChange={event => setSearchKeyword(event.target.value)} placeholder="Search for a Repo" />
       </form>
     </div>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import './RepoCard.css'
 
 const RepoCard = ({ repoName, repoOwner, techLanguage, openIssues}) => {
   return (
@@ -10,6 +11,7 @@ const RepoCard = ({ repoName, repoOwner, techLanguage, openIssues}) => {
       <div className="right-container">
         <p>{techLanguage}</p>
         <p>{openIssues}</p>
+        {/* <button className="add-repo-to-list" onClick={() => {handleClick()}}>Add to List</button> */}
       </div>
     </div>
   )

@@ -6,11 +6,11 @@ import RepoCard from '../RepoCard/RepoCard'
 const RepoContainer = () => {
   const { repos } = useContext(SearchContext)
 
-  const repoCards = repos.map((result) => {
-        <BookCard
-          name={result.name}
-          owner={result.owner.login} 
-          language={result.language}
+  const repoCards = repos.map((result) => { 
+    return <RepoCard
+          repoName={result.name}
+          RepoOwner={result.owner.login} 
+          techLanguage={result.language}
           openIssues={result.open_issues} />
   })
 

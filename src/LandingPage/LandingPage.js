@@ -10,7 +10,7 @@ const LandingPage = () => {
     <div className="landing-page">
       <h2>Landing Page</h2>
      <RepoSearch />
-      {/* <RepoContainer /> */}
+      <RepoContainer />
     </div>
   )
 }

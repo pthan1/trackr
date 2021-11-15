@@ -9,9 +9,10 @@ const RepoContainer = () => {
 
   const repoCards = repos.map((result) => { 
     return <RepoCard
-          repoName={result.name}
-          RepoOwner={result.owner.login} 
-          techLanguage={result.language}
+          id={result.id}
+          name={result.name}
+          owner={result.owner.login} 
+          language={result.language}
           openIssues={result.open_issues} />
   })
 

@@ -3,7 +3,6 @@ import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import RepoSearch from '../RepoSearch/RepoSearch';
 import RepoContainer from '../RepoContainer/RepoContainer'
-// import RepoSearchByOwner from '../RepoSearchByOwner';
 
 const LandingPage = () => {
   return (

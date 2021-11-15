@@ -27,7 +27,7 @@ const displayButton = () => {
   if (favoriteRepos.some(repo => repo.id === id)) {
     return <p>Added to Favorites List</p>
   } else {
-    return <button type="button" onClick={(e) => {handleClick(e)}}>Add Repo to List</button>
+    return <button type="button" onClick={(e) => {handleClick(e)}}>Track this Repo</button>
   }
 }
 

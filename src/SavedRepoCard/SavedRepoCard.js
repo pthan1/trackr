@@ -18,7 +18,7 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
 }
 
 const displayButton = () => {
-  return <button type="button" onClick={(e) => {handleClick(e)}}>Remove Repo From List</button>
+  return <button type="button" onClick={(e) => {handleClick(e)}}>Untrack this Repo</button>
   }
 
 

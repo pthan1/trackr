@@ -3,4 +3,11 @@
   height: 100vh;
 }
 
+.navbar-main-body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid cyan; */
+}
 

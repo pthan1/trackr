@@ -17,7 +17,7 @@ const handleClick = (e) => {
     language: language,
     openIssues: openIssues
   }
-  addRepo({newRepo})
+  addRepo(newRepo)
     .then(data => setFavoriteRepos(data)); 
 }
 

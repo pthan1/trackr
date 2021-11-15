@@ -11,7 +11,7 @@ const searchPublicRepos = (keyword) => {
 const addRepo = (newRepo) => {
   return fetch(`http://localhost:5000/api/v1/repos`, {
 				method: 'POST',
-				body: JSON.stringify({newRepo}),
+				body: JSON.stringify(newRepo),
 				headers: {
 					'Content-Type': 'application/json'
 				}

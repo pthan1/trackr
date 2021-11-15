@@ -6,6 +6,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import Issues from '../Issues/Issues';
 import UserIssues from '../UserIssues/UserIssues';
 import SearchContextProvider from '../context/SearchContext';
+import SavedRepos from '../SavedRepos/SavedRepos';
 
 function App() {
   return (
@@ -16,8 +17,7 @@ function App() {
     <Sidebar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/issues" element={<Issues />} />
-        <Route path="/assigned" element={<UserIssues />} />
+        <Route path="/repos" element={<SavedRepos />} />
       </Routes>
     </div>
       </SearchContextProvider>

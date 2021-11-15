@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import './SavedRepos.css'
-import SavedRepoCard from '../SavedRepoCard'
+import SavedRepoCard from '../SavedRepoCard/SavedRepoCard'
+import { SearchContext } from '../context/SearchContext'
+import { getFavoriteRepos } from '../apiCalls'
 
 const SavedRepos = () => {
-  const { favoriteRepos } = useContext(SearchContext)
+  const { favoriteRepos, setFavoriteRepos } = useContext(SearchContext)
+
+  useEffect(() => {
+    getFavoriteRepos()
+    .then(data => setFavoriteRepos(data))
+  }, [favoriteRepos])
+
 
   const repoCards = favoriteRepos.map((result) => { 
     return <SavedRepoCard

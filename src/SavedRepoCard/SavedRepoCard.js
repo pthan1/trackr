@@ -11,11 +11,14 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
   const handleClick = (e) => {
     e.preventDefault();
     removeRepo(id)
-      .then(data => setFavoriteRepos(data)); 
+    .then(data => {
+      console.log('data', data);
+      setFavoriteRepos(data)}
+      ); 
 }
 
 const displayButton = () => {
-  <button type="button" onClick={(e) => {handleClick(e)}}>Remove Repo From List</button>
+  return <button type="button" onClick={(e) => {handleClick(e)}}>Remove Repo From List</button>
   }
 
 

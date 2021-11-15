@@ -1,0 +1,8 @@
+.repo-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 11.2rem);
+  grid-gap: 0.7rem;
+  border: 1px solid blue;
+
+}

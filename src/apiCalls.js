@@ -8,6 +8,17 @@ const searchPublicRepos = (keyword) => {
   })
 }
 
+const getFavoriteRepos = () => {
+  return fetch(`http://localhost:5000/api/v1/repos`)
+      .then(response => {
+          if (!response.ok) {
+            throw new Error(`Status: ${response.status}`)
+          }
+          return response.json()
+        })        
+}
+
+
 const addRepo = (newRepo) => {
   return fetch(`http://localhost:5000/api/v1/repos`, {
 				method: 'POST',
@@ -36,4 +47,4 @@ const removeRepo = (id) => {
         })        
 }
 
-export { searchPublicRepos, addRepo, removeRepo }
+export { searchPublicRepos, addRepo, removeRepo, getFavoriteRepos }

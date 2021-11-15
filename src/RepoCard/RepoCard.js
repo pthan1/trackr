@@ -6,12 +6,12 @@ import { SearchContext } from '../context/SearchContext'
 
 const RepoCard = ({ id, name, owner, language, openIssues }) => {
 
-  const { setFavoriteRepos } = useContext(SearchContext);
+  const { favoriteRepos, setFavoriteRepos } = useContext(SearchContext);
 
+  
 const handleClick = (e) => {
   e.preventDefault();
 
-  if (window.location.pathname !== "/repos") {
   const newRepo = {
     id: id,
     name: name,
@@ -21,9 +21,13 @@ const handleClick = (e) => {
   }
   addRepo(newRepo)
     .then(data => setFavoriteRepos(data)); 
+}
+
+const displayButton = () => {
+  if (favoriteRepos.some(repo => repo.id === id)) {
+    return <p>Added to Favorites List</p>
   } else {
-    removeRepo(id)
-      .then(data => setFavoriteRepos(data))
+    return <button type="button" onClick={(e) => {handleClick(e)}}>Add Repo to List</button>
   }
 }
 
@@ -36,8 +40,7 @@ const handleClick = (e) => {
       <div className="right-container">
         <p>Languge: {language}</p>
         <p>Open Issues: {openIssues}</p>
-        {window.location.pathname !== "/repos" ? <button type="button" onClick={(e) => {handleClick(e)}}>Add Repo to List</button> : <button type="button" onClick={(e) => {handleClick(e)}}>Remove Repo from List</button>}
-        
+        {displayButton()}
       </div>
     </div>
   )

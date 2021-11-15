@@ -1,7 +1,7 @@
 import { EventAvailableTwoTone } from '@material-ui/icons'
 import React, { useContext } from 'react'
 import './RepoCard.css'
-import { addRepo } from '../apiCalls'
+import { addRepo, removeRepo } from '../apiCalls'
 import { SearchContext } from '../context/SearchContext'
 
 const RepoCard = ({ id, name, owner, language, openIssues }) => {
@@ -10,6 +10,8 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
 
 const handleClick = (e) => {
   e.preventDefault();
+
+  if (window.location.pathname !== "/repos") {
   const newRepo = {
     id: id,
     name: name,
@@ -19,6 +21,10 @@ const handleClick = (e) => {
   }
   addRepo(newRepo)
     .then(data => setFavoriteRepos(data)); 
+  } else {
+    removeRepo(id)
+      .then(data => setFavoriteRepos(data))
+  }
 }
 
   return (
@@ -30,7 +36,8 @@ const handleClick = (e) => {
       <div className="right-container">
         <p>Languge: {language}</p>
         <p>Open Issues: {openIssues}</p>
-        <button type="button" onClick={(e) => {handleClick(e)}}>Add Repo to List</button>
+        {window.location.pathname !== "/repos" ? <button type="button" onClick={(e) => {handleClick(e)}}>Add Repo to List</button> : <button type="button" onClick={(e) => {handleClick(e)}}>Remove Repo from List</button>}
+        
       </div>
     </div>
   )

@@ -24,4 +24,16 @@ const addRepo = (newRepo) => {
         })        
 }
 
-export { searchPublicRepos, addRepo }
+const removeRepo = (id) => {
+  return fetch(`http://localhost:5000/api/v1/repos/${id}`, {
+				method: 'DELETE'
+			})
+      .then(response => {
+          if (!response.ok) {
+            throw new Error(`Status: ${response.status}`)
+          }
+          return response.json()
+        })        
+}
+
+export { searchPublicRepos, addRepo, removeRepo }

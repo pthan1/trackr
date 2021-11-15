@@ -1,7 +1,6 @@
-import { EventAvailableTwoTone } from '@material-ui/icons'
 import React, { useContext } from 'react'
-import './RepoCard.css'
-import { addRepo, removeRepo } from '../apiCalls'
+import './SavedRepoCard.css'
+import { removeRepo } from '../apiCalls'
 import { SearchContext } from '../context/SearchContext'
 
 const RepoCard = ({ id, name, owner, language, openIssues }) => {
@@ -11,25 +10,17 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
   
   const handleClick = (e) => {
     e.preventDefault();
-
-    const newRepo = {
-      id: id,
-      name: name,
-      owner: owner,
-      language: language,
-      openIssues: openIssues
-    }
-    addRepo(newRepo)
-      .then(data => setFavoriteRepos(data)); 
+    removeRepo(id)
+    .then(data => {
+      console.log('data', data);
+      setFavoriteRepos(data)}
+      ); 
 }
 
 const displayButton = () => {
-  if (favoriteRepos.some(repo => repo.id === id)) {
-    return <p>Added to Favorites List</p>
-  } else {
-    return <button type="button" onClick={(e) => {handleClick(e)}}>Track this Repo</button>
+  return <button type="button" onClick={(e) => {handleClick(e)}}>Untrack this Repo</button>
   }
-}
+
 
   return (
     <div className="repo-card">

@@ -5,7 +5,7 @@ import { SearchContext } from '../context/SearchContext'
 
 const RepoCard = ({ id, name, owner, language, openIssues }) => {
 
-  const { favoriteRepos, setFavoriteRepos } = useContext(SearchContext);
+  const { setFavoriteRepos } = useContext(SearchContext);
 
   
   const handleClick = (e) => {

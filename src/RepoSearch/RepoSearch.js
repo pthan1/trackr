@@ -4,7 +4,7 @@ import { searchPublicRepos } from "../apiCalls";
 
 const RepoSearch = () => {
 const [searchKeyword, setSearchKeyword] = useState("");
-const { repos, setRepos } = useContext(SearchContext);
+const { setRepos } = useContext(SearchContext);
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -12,7 +12,6 @@ const handleSubmit = (event) => {
   if (processedInput.length === 1) {
     searchPublicRepos(searchKeyword)
     .then(res => {
-      console.log('search', res)
       setRepos(res.items)
     })
   } else {

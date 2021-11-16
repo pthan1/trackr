@@ -1,7 +1,6 @@
-import { EventAvailableTwoTone } from '@material-ui/icons'
 import React, { useContext } from 'react'
 import './RepoCard.css'
-import { addRepo, removeRepo } from '../apiCalls'
+import { addRepo } from '../apiCalls'
 import { SearchContext } from '../context/SearchContext'
 
 const RepoCard = ({ id, name, owner, language, openIssues }) => {
@@ -21,7 +20,6 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
     }
     addRepo(newRepo)
       .then(data => {
-        console.log('add', data) 
         setFavoriteRepos(data)
       }); 
 }

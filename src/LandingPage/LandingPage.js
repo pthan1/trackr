@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../Header/Header';
-import Sidebar from '../Sidebar/Sidebar';
 import RepoSearch from '../RepoSearch/RepoSearch';
 import RepoContainer from '../RepoContainer/RepoContainer'
 

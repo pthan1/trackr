@@ -9,7 +9,7 @@ const searchPublicRepos = (keyword) => {
 }
 
 const getFavoriteRepos = () => {
-  return fetch(`http://localhost:5000/api/v1/repos`)
+  return fetch(`https://trackr-api-turing.herokuapp.com/api/v1/repos`)
       .then(response => {
           if (!response.ok) {
             throw new Error(`Status: ${response.status}`)
@@ -19,7 +19,7 @@ const getFavoriteRepos = () => {
 }
 
 const addRepo = (newRepo) => {
-  return fetch(`http://localhost:5000/api/v1/repos`, {
+  return fetch(`https://trackr-api-turing.herokuapp.com/api/v1/repos`, {
 				method: 'POST',
 				body: JSON.stringify(newRepo),
 				headers: {
@@ -35,7 +35,7 @@ const addRepo = (newRepo) => {
 }
 
 const removeRepo = (id) => {
-  return fetch(`http://localhost:5000/api/v1/repos/${id}`, {
+  return fetch(`https://trackr-api-turing.herokuapp.com/api/v1/repos/${id}`, {
 				method: 'DELETE'
 			})
       .then(response => {

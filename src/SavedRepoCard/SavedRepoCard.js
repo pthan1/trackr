@@ -12,13 +12,12 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
     e.preventDefault();
     removeRepo(id)
     .then(data => {
-      console.log('data', data);
       setFavoriteRepos(data)}
       ); 
 }
 
 const displayButton = () => {
-  return <button type="button" onClick={(e) => {handleClick(e)}}>Untrack this Repo</button>
+  return <button type="button" className="untrack-repo-btn" onClick={(e) => {handleClick(e)}}>Untrack this Repo</button>
   }
 
 

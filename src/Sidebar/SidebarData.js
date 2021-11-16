@@ -7,11 +7,13 @@ export const sidebarData = [
   {
     title: "Home",
     icon: <HomeRoundedIcon />,
-    link: "/"
+    link: "/",
+    id: "home"
   },
  {
     title: "Tracked Repos",
     icon: <ListRoundedIcon />,
-    link: "/repos"
+    link: "/repos",
+    id: "tracked-repos"
   }
 ]

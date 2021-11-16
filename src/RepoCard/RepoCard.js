@@ -20,14 +20,17 @@ const RepoCard = ({ id, name, owner, language, openIssues }) => {
       openIssues: openIssues
     }
     addRepo(newRepo)
-      .then(data => setFavoriteRepos(data)); 
+      .then(data => {
+        console.log('add', data) 
+        setFavoriteRepos(data)
+      }); 
 }
 
 const displayButton = () => {
   if (favoriteRepos.some(repo => repo.id === id)) {
-    return <p>Added to Favorites List</p>
+    return <p>Tracking this repo!</p>
   } else {
-    return <button type="button" onClick={(e) => {handleClick(e)}}>Track this Repo</button>
+    return <button type="button" className="add-repo-btn" onClick={(e) => {handleClick(e)}}>Track this Repo</button>
   }
 }
 

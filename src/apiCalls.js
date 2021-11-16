@@ -18,7 +18,6 @@ const getFavoriteRepos = () => {
         })
 }
 
-
 const addRepo = (newRepo) => {
   return fetch(`http://localhost:5000/api/v1/repos`, {
 				method: 'POST',

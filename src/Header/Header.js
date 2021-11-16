@@ -1,9 +1,10 @@
 import React from 'react';
+import './Header.css';
 
 function Header() {
   return (
     <div className="header">
-      <div>Trackr</div>
+      <div><h1>Trackr</h1></div>
     </div>
   )
 }

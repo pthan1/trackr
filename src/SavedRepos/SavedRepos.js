@@ -10,7 +10,7 @@ const SavedRepos = () => {
   useEffect(() => {
     getFavoriteRepos()
     .then(data => setFavoriteRepos(data))
-  }, [favoriteRepos])
+  }, [])
 
 
   const repoCards = favoriteRepos.map((result) => { 
@@ -23,8 +23,11 @@ const SavedRepos = () => {
   })
 
   return (
-<div className="repo-container">
-      {repoCards}
+    <div className="tracked-repos">
+      <h2>Tracked Repos</h2>
+      <div className="repo-container">
+        {favoriteRepos.length < 1 ? <p>There are no tracked repos</p> : repoCards}
+        </div>
     </div>
   )
 }

@@ -12,6 +12,7 @@ const handleSubmit = (event) => {
   if (processedInput.length === 1) {
     searchPublicRepos(searchKeyword)
     .then(res => {
+      console.log('search', res)
       setRepos(res.items)
     })
   } else {
@@ -23,7 +24,7 @@ const handleSubmit = (event) => {
 
   return (
     <div className="public-repo-search-form">
-      <form onSubmit={event => handleSubmit(event)}>
+      <form onSubmit={event => handleSubmit(event)} className="repo-search-form">
         <input type="text" name="search-keyword" value={searchKeyword} onChange={event => setSearchKeyword(event.target.value)} placeholder="Search for a Repo" />
       </form>
     </div>

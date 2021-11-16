@@ -15,7 +15,7 @@ const getFavoriteRepos = () => {
             throw new Error(`Status: ${response.status}`)
           }
           return response.json()
-        })        
+        })
 }
 
 

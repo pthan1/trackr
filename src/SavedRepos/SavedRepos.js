@@ -10,11 +10,12 @@ const SavedRepos = () => {
   useEffect(() => {
     getFavoriteRepos()
     .then(data => setFavoriteRepos(data))
-  }, [])
+  }, [setFavoriteRepos])
 
 
-  const repoCards = favoriteRepos.map((result) => { 
+  const repoCards = favoriteRepos.map((result, key) => { 
     return <SavedRepoCard
+          key={key}
           id={result.id}
           name={result.name}
           owner={result.owner.login} 

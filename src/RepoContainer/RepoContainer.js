@@ -7,8 +7,9 @@ import './RepoContainer.css'
 const RepoContainer = () => {
   const { repos } = useContext(SearchContext)
 
-  const repoCards = repos.map((result) => { 
+  const repoCards = repos.map((result, key) => { 
     return <RepoCard
+          key={key}
           id={result.id}
           name={result.name}
           owner={result.owner.login} 

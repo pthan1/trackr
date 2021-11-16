@@ -1,10 +1,8 @@
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar';
 import Header from '../Header/Header';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
-import Issues from '../Issues/Issues';
-import UserIssues from '../UserIssues/UserIssues';
 import SearchContextProvider from '../context/SearchContext';
 import SavedRepos from '../SavedRepos/SavedRepos';
 
